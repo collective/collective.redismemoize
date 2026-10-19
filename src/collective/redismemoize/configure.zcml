@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="collective.redismemoize"
+    >
+
+  <include
+      package="Products.CMFCore"
+      file="permissions.zcml"
+      />
+
+  <include file="dependencies.zcml" />
+
+  <include package=".services" />
+
+  <!-- The ICacheChooser itself is registered in overrides.zcml. -->
+
+</configure>

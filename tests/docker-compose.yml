@@ -1,0 +1,20 @@
+# The servers the docker-marked tests run against.
+#
+# Started and stopped by pytest-docker, on demand: only tests that ask for the
+# ``redis_url`` fixture bring them up, so `make test` never touches Docker.
+# The host ports are ephemeral; the fixtures ask Docker which one it picked.
+#
+# Persistence is off, as the how-to guide recommends for a cache: nothing here
+# is worth keeping, and a server that never forks to save starts faster.
+services:
+  redis:
+    image: redis:${REDIS_VERSION:-7-alpine}
+    command: ['redis-server', '--save', '', '--appendonly', 'no']
+    ports:
+      - '6379'
+
+  valkey:
+    image: valkey/valkey:${VALKEY_VERSION:-8-alpine}
+    command: ['valkey-server', '--save', '', '--appendonly', 'no']
+    ports:
+      - '6379'

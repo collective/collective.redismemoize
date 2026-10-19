@@ -1,0 +1,2 @@
+<include package="collective.redismemoize" />
+<includeOverrides package="collective.redismemoize" file="overrides.zcml" />

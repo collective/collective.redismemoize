@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <!--
+    Replaces plone.memoize's own ICacheChooser. plone.autoinclude loads this
+    file through Products.CMFPlone's overrides.zcml; a site that disables
+    autoinclude includes it with includeOverrides.
+  -->
+  <utility
+      provides="plone.memoize.interfaces.ICacheChooser"
+      component=".chooser.choose_cache"
+      />
+
+</configure>

@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "active": false,
+    "breaker": null,
+    "functions": {},
+    "server": null,
+    "settings": {
+        "exclude": [],
+        "include": [],
+        "max_size": 1048576,
+        "prefix": "plone.memoize",
+        "retry_after": 30.0,
+        "timeout": 0.25,
+        "ttl": 86400,
+        "url": null
+    }
+}

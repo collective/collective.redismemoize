@@ -1,0 +1,70 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+    "active": true,
+    "breaker": {
+        "open": false,
+        "seconds_until_retry": 0.0
+    },
+    "functions": {
+        "plone.app.theming.plugins.utils.getPluginSettings": {
+            "counters": {
+                "errors": 0,
+                "ram_hits": 2,
+                "ram_misses": 0,
+                "redis_hits": 0,
+                "redis_misses": 2,
+                "refused": 0,
+                "too_large": 0,
+                "undecodable": 0
+            },
+            "reason": null,
+            "route": "redis"
+        },
+        "plone.app.theming.plugins.utils.getPlugins": {
+            "counters": {
+                "errors": 0,
+                "ram_hits": 2,
+                "ram_misses": 0,
+                "redis_hits": 0,
+                "redis_misses": 2,
+                "refused": 0,
+                "too_large": 0,
+                "undecodable": 0
+            },
+            "reason": null,
+            "route": "redis"
+        },
+        "tests.integration.compute": {
+            "counters": {
+                "errors": 0,
+                "ram_hits": 0,
+                "ram_misses": 1,
+                "redis_hits": 1,
+                "redis_misses": 1,
+                "refused": 0,
+                "too_large": 0,
+                "undecodable": 0
+            },
+            "reason": null,
+            "route": "redis"
+        }
+    },
+    "server": {
+        "error": null,
+        "latency_ms": 0.25,
+        "product": "redis",
+        "version": null
+    },
+    "settings": {
+        "exclude": [],
+        "include": [],
+        "max_size": 1048576,
+        "prefix": "test.memoize",
+        "retry_after": 30.0,
+        "timeout": 0.25,
+        "ttl": 86400,
+        "url": "redis://fakeredis:6379/0"
+    }
+}

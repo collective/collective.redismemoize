@@ -1,0 +1,30 @@
+services:
+  backend:
+    image: plone/server-prod-config:6.2
+    environment:
+      REDIS_MEMOIZE_URL: redis://redis:6379/0
+      REDIS_MEMOIZE_PREFIX: example-org
+    networks:
+      - cache
+      - default
+    deploy:
+      replicas: 2
+
+  redis:
+    image: redis:7-alpine
+    command:
+      - redis-server
+      - --save
+      - ''
+      - --appendonly
+      - 'no'
+      - --maxmemory
+      - 256mb
+      - --maxmemory-policy
+      - allkeys-lru
+    networks:
+      - cache
+
+networks:
+  cache:
+    internal: true

@@ -1,0 +1,57 @@
+[project]
+name = "collective-redismemoize-docs"
+description = "Redis-backed storage for plone.memoize, shared across Plone instances, that keeps values Redis can't safely store in each process's RAM cache."
+version = "1.0.0"
+keywords = [
+    "collective.redismemoize",
+    "documentation",
+    "Plone",
+    "Diátaxis",
+]
+readme = "README.md"
+requires-python = "==3.14.*"
+license = { file = "LICENSE.md" }
+maintainers = [
+    { name = "Érico Andrei", email = "ericof@plone.org" },
+]
+authors = [
+    { name = "Érico Andrei", email = "ericof@plone.org" },
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "collective.redismemoize",
+]
+
+[dependency-groups]
+dev = [
+    "linkify-it-py",
+    "myst-parser",
+    "plone-sphinx-theme",
+    "sphinx-autobuild",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinx-notfound-page",
+    "sphinx-sitemap",
+    "sphinx-tippy",
+    "sphinxcontrib-httpdomain",
+    "sphinxcontrib-httpexample",
+    "sphinxcontrib-mermaid",
+    "sphinxext-opengraph",
+    "vale",
+]
+
+[project.urls]
+Repository = "https://github.com/collective/collective.redismemoize"
+Documentation = "https://collective.github.io/collective.redismemoize/"
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+"collective.redismemoize" = { path = "../", editable = true }
