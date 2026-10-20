@@ -45,3 +45,5 @@ var/
 /venv/
 constraints*.txt
 requirements*.txt
+
+uv.lock
