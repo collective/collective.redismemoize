@@ -58,6 +58,7 @@ release = [
 
 [project.urls]
 Homepage = "https://github.com/collective/collective.redismemoize"
+Documentation = "https://collective.github.io/collective.redismemoize/"
 PyPI = "https://pypi.org/project/collective.redismemoize"
 Source = "https://github.com/collective/collective.redismemoize"
 Tracker = "https://github.com/collective/collective.redismemoize/issues"
