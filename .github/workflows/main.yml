@@ -17,7 +17,7 @@ jobs:
       - config
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.2
         with:
           python-version: ${{ needs.config.outputs.python-version }}
       - name: "Lint"
@@ -43,7 +43,7 @@ jobs:
       PLONE_VERSION: ${{ matrix.plone-version }}
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.2
         with:
           python-version: ${{ matrix.python-version }}
       - name: "Install"
@@ -60,7 +60,7 @@ jobs:
       PLONE_VERSION: ${{ needs.config.outputs.plone-version }}
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.2
         with:
           python-version: ${{ needs.config.outputs.python-version }}
       - name: "Install"
@@ -80,7 +80,7 @@ jobs:
       REDIS_MEMOIZE_REQUIRE_DOCKER: '1'
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.2
         with:
           python-version: ${{ needs.config.outputs.python-version }}
       - name: "Install"
@@ -97,7 +97,7 @@ jobs:
     if: ${{ needs.config.outputs.docs == 'true' || github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10.3.0
+      - uses: astral-sh/setup-uv@v10.3.2
         with:
           python-version: '3.14'
       - name: "Build, warnings as errors"
